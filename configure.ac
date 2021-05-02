@@ -6,7 +6,7 @@ AC_INIT([mod_cdn], [1.1.1], [support@voxel.net], [mod_cdn], [http://www.voxel.ne
 AC_CONFIG_SRCDIR([mod_cdn.c])
 AC_CONFIG_MACRO_DIR([m4])
 
-AM_INIT_AUTOMAKE([-Wall -Werror foreign])
+AM_INIT_AUTOMAKE([-Wall -Wno-error foreign])
 
 # Checks for programs.
 AC_PROG_CC
