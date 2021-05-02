@@ -55,7 +55,7 @@
  ********************************************************************/
 
 #include <ctype.h>
-
+#include <time.h>
 #include <libxml/HTMLparser.h>
 
 #include <openssl/sha.h>
