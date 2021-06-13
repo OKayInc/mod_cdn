@@ -208,7 +208,7 @@ static void pcharacters(void* ctxt, const xmlChar *uchars, int length) {
   int begin ;
   for ( begin=i=0; i<length; i++ ) {
     switch (chars[i]) {
-    case '&' : FLUSH ; ap_fputs(ctx->f->next, ctx->bb, "&amp;") ; break ;
+//    case '&' : FLUSH ; ap_fputs(ctx->f->next, ctx->bb, "&amp;") ; break ;
     case '<' : FLUSH ; ap_fputs(ctx->f->next, ctx->bb, "&lt;") ; break ;
     case '>' : FLUSH ; ap_fputs(ctx->f->next, ctx->bb, "&gt;") ; break ;
     case '"' : FLUSH ; ap_fputs(ctx->f->next, ctx->bb, "&quot;") ; break ;
@@ -1098,7 +1098,7 @@ static void *cdn_config(apr_pool_t * pool, char *x)
   cdn_conf *ret = apr_pcalloc(pool, sizeof(cdn_conf));
   ret->doctype = DEFAULT_DOCTYPE;
   ret->default_encoding = XML_CHAR_ENCODING_NONE;
-  ret->bufsz = 8192;
+  ret->bufsz = 262144;	// 256 Kb
   ret->auth_header_text = "required";
   ret->auth_exptime = 900;
   ret->default_exptime = 86400;
